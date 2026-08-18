@@ -1,0 +1,78 @@
+<section id="hero">
+	<p>01 / 05</p>
+
+	<p>Software Engineer</p>
+
+	<h1>
+		Luis Felipe
+		<br />
+		Herreño
+	</h1>
+
+	<p>
+		I build software systems, cloud architectures and digital products.
+	</p>
+
+	<a href="#projects">Explore my work</a>
+</section>
+
+<style>
+	#hero {
+		min-height: calc(100vh - 80px);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 120px 48px 80px;
+	}
+
+	#hero h1 {
+		font-size: clamp(4rem, 10vw, 10rem);
+		line-height: 0.9;
+		font-weight: 500;
+		letter-spacing: -0.05em;
+		margin: 24px 0;
+	}
+
+	#hero p {
+		margin: 0;
+	}
+
+	#hero p:nth-child(1) {
+		font-size: 0.85rem;
+		opacity: 0.5;
+	}
+
+	#hero p:nth-child(2) {
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+	}
+
+	#hero p:nth-child(4) {
+		max-width: 500px;
+		font-size: 1.1rem;
+		line-height: 1.6;
+		opacity: 0.7;
+	}
+
+	#hero a {
+		margin-top: 32px;
+		width: fit-content;
+		text-decoration: none;
+		color: inherit;
+		border-bottom: 1px solid currentColor;
+		padding-bottom: 6px;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		#hero {
+			min-height: calc(100vh - 70px);
+			padding: 80px 24px 60px;
+		}
+
+		#hero h1 {
+			font-size: clamp(3.5rem, 17vw, 6rem);
+		}
+	}
+</style>

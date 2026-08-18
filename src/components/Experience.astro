@@ -1,0 +1,101 @@
+<section id="experience">
+	<div class="experience-label">
+		<p>Experiencia</p>
+	</div>
+
+	<div class="experience-list">
+		<article>
+			<div class="experience-date">
+				<p>2026 — Presente</p>
+			</div>
+
+			<div class="experience-content">
+				<h3>Technical Lead</h3>
+				<p class="company">Company</p>
+
+				<p class="description">
+					Liderando decisiones técnicas, arquitectura y
+					desarrollo de soluciones de software.
+				</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+<style>
+	#experience {
+		padding: 160px 48px;
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.experience-label {
+		margin-bottom: 80px;
+	}
+
+	.experience-label p {
+		margin: 0;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		opacity: 0.5;
+	}
+
+	.experience-list {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.experience-list article {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 80px;
+		padding: 48px 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.experience-date p {
+		margin: 0;
+		font-size: 0.85rem;
+		opacity: 0.5;
+	}
+
+	.experience-content h3 {
+		margin: 0;
+		font-size: clamp(2rem, 3vw, 3rem);
+		font-weight: 400;
+		letter-spacing: -0.03em;
+	}
+
+	.experience-content .company {
+		margin: 8px 0 0;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		opacity: 0.5;
+	}
+
+	.experience-content .description {
+		max-width: 650px;
+		margin-top: 32px;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		opacity: 0.65;
+	}
+
+    @media (max-width: 768px) {
+        #experience {
+            padding: 100px 24px;
+        }
+
+        .experience-label {
+            margin-bottom: 48px;
+        }
+
+        .experience-list article {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 40px 0;
+        }
+    }
+</style>
+

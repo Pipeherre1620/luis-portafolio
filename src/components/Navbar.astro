@@ -1,0 +1,161 @@
+<nav>
+	<a class="logo" href="/">PIPEHERRE</a>
+
+	<div class="desktop-menu">
+		<a href="#about">About</a>
+		<a href="#experience">Experience</a>
+		<a href="#projects">Projects</a>
+		<a href="#architecture">Architecture</a>
+		<a href="#contact">Contact</a>
+	</div>
+
+	<button class="menu-button" aria-label="Abrir menú" aria-expanded="false">
+		<span></span>
+		<span></span>
+	</button>
+
+	<div class="mobile-menu">
+		<a href="#about">About</a>
+		<a href="#experience">Experience</a>
+		<a href="#projects">Projects</a>
+		<a href="#architecture">Architecture</a>
+		<a href="#contact">Contact</a>
+	</div>
+</nav>
+
+<style>
+
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 24px 48px;
+
+        background: rgba(10, 10, 10, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+	.logo {
+		color: inherit;
+		text-decoration: none;
+		font-size: 1rem;
+		font-weight: 600;
+		letter-spacing: -0.03em;
+	}
+
+	.desktop-menu {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+
+	.desktop-menu a {
+		color: inherit;
+		text-decoration: none;
+		font-size: 0.85rem;
+		opacity: 0.6;
+		transition: opacity 0.3s ease;
+	}
+
+	.desktop-menu a:hover {
+		opacity: 1;
+	}
+
+	.menu-button {
+		display: none;
+		width: 40px;
+		height: 40px;
+		padding: 8px;
+		border: none;
+		background: transparent;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.menu-button span {
+		display: block;
+		width: 24px;
+		height: 1px;
+		margin: 6px auto;
+		background: currentColor;
+	}
+
+	.mobile-menu {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		nav {
+			padding: 20px 24px;
+		}
+
+		.desktop-menu {
+			display: none;
+		}
+
+		.menu-button {
+			display: block;
+		}
+
+		.mobile-menu {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			padding: 32px 24px;
+			flex-direction: column;
+			gap: 24px;
+			background: var(--background);
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.mobile-menu.open {
+			display: flex;
+		}
+
+		.mobile-menu a {
+			color: inherit;
+			text-decoration: none;
+			font-size: 1.5rem;
+		}
+	}
+</style>
+
+<script>
+	const button = document.querySelector(".menu-button");
+	const menu = document.querySelector(".mobile-menu");
+
+	button?.addEventListener("click", () => {
+		const isOpen = menu?.classList.toggle("open");
+
+		button?.setAttribute(
+			"aria-expanded",
+			String(isOpen)
+		);
+
+		button?.setAttribute(
+			"aria-label",
+			isOpen ? "Cerrar menú" : "Abrir menú"
+		);
+	});
+
+	const menuLinks = document.querySelectorAll(".mobile-menu a");
+
+	menuLinks.forEach((link) => {
+		link.addEventListener("click", () => {
+			menu?.classList.remove("open");
+
+			button?.setAttribute("aria-expanded", "false");
+			button?.setAttribute("aria-label", "Abrir menú");
+		});
+	});
+</script>

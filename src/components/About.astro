@@ -1,0 +1,108 @@
+<section id="about">
+	<div class="about-label">
+		<p>About</p>
+	</div>
+
+	<div class="about-content">
+		<h2>
+
+            Sobre mi ...
+			
+		</h2>
+
+        <p>
+
+            Construyo sistemas de software con enfoque en
+            desarrollo backend, cloud y arquitectura de software.
+		
+		</p>
+
+		<p>
+
+            Me gusta entender cómo funcionan los sistemas,
+            diseñar soluciones que puedan evolucionar con el
+            tiempo y convertir problemas técnicos complejos
+            en software simple y mantenible.
+		
+		</p>
+
+		<p>
+
+            Me interesan especialmente los sistemas
+            distribuidos, las arquitecturas cloud-native
+            y el liderazgo técnico.
+
+		</p>
+
+		<div class="about-skills">
+			<span>Backend Engineering</span>
+			<span>Cloud & AWS</span>
+			<span>Software Architecture</span>
+			<span>Technical Leadership</span>
+		</div>
+	</div>
+</section>
+
+<style>
+	#about {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 80px;
+		padding: 160px 48px;
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.about-label p {
+		margin: 0;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		opacity: 0.5;
+	}
+
+	.about-content h2 {
+		max-width: 900px;
+		margin: 0;
+		font-size: clamp(2rem, 4vw, 4rem);
+		line-height: 1.05;
+		font-weight: 400;
+		letter-spacing: -0.03em;
+	}
+
+	.about-content > p {
+		max-width: 700px;
+		margin-top: 32px;
+		font-size: 1.1rem;
+		line-height: 1.7;
+		opacity: 0.65;
+	}
+
+	.about-skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 48px;
+	}
+
+	.about-skills span {
+		padding: 10px 16px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 999px;
+		font-size: 0.85rem;
+	}
+
+
+    @media (max-width: 768px) {
+        #about {
+            grid-template-columns: 1fr;
+            gap: 48px;
+            padding: 100px 24px;
+        }
+
+        .about-content h2 {
+            font-size: clamp(2rem, 10vw, 3rem);
+        }
+    }
+
+</style>
+

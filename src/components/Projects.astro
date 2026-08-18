@@ -1,0 +1,129 @@
+<section id="projects">
+	<div class="projects-label">
+		<p>Proyectos</p>
+	</div>
+
+	<div class="projects-list">
+		<article>
+			<span>01</span>
+
+			<div>
+				<h3>QuickTicket</h3>
+
+				<p class="project-type">
+					Arquitectura evolutiva
+				</p>
+
+				<p class="description">
+					POC de arquitectura distribuida para un flujo
+					asíncrono de reservas y pagos.
+				</p>
+			</div>
+		</article>
+
+		<article>
+			<span>02</span>
+
+			<div>
+				<h3>Architecture Research</h3>
+
+				<p class="project-type">
+					Software Architecture
+				</p>
+
+				<p class="description">
+					Investigación y aprendizaje sobre arquitectura
+					de software, sistemas distribuidos y cloud.
+				</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+<style>
+	#projects {
+		padding: 160px 48px;
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.projects-label {
+		margin-bottom: 80px;
+	}
+
+	.projects-label p {
+		margin: 0;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		opacity: 0.5;
+	}
+
+	.projects-list {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.projects-list article {
+		display: grid;
+		grid-template-columns: 80px 1fr;
+		gap: 48px;
+		padding: 48px 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		transition: opacity 0.3s ease;
+	}
+
+	.projects-list article:hover {
+		opacity: 0.7;
+	}
+
+	.projects-list article > span {
+		font-size: 0.85rem;
+		opacity: 0.5;
+	}
+
+	.projects-list h3 {
+		margin: 0;
+		font-size: clamp(2.5rem, 5vw, 5rem);
+		font-weight: 400;
+		line-height: 0.95;
+		letter-spacing: -0.04em;
+	}
+
+	.project-type {
+		margin: 16px 0 0;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		opacity: 0.5;
+	}
+
+	.description {
+		max-width: 650px;
+		margin: 32px 0 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		opacity: 0.65;
+	}
+
+    @media (max-width: 768px) {
+        #projects {
+            padding: 100px 24px;
+        }
+
+        .projects-label {
+            margin-bottom: 48px;
+        }
+
+        .projects-list article {
+            grid-template-columns: 40px 1fr;
+            gap: 16px;
+            padding: 40px 0;
+        }
+
+        .projects-list h3 {
+            font-size: clamp(2rem, 10vw, 3.5rem);
+        }
+    }
+
+</style>
+
