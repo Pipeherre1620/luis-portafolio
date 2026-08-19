@@ -1,78 +1,437 @@
 <section id="hero">
-	<p>01 / 05</p>
+	<!-- Fondo de Plano Arquitectónico (Blueprint Grid + Noise) -->
+	<div class="hero-bg-grid" aria-hidden="true"></div>
+	<div class="hero-glow" aria-hidden="true"></div>
 
-	<p>Software Engineer</p>
+	<div class="hero-container">
+		<!-- Columna Izquierda: Información y Terminal CLI -->
+		<div class="hero-content">
+			<!-- Pill de Estado -->
+			<div class="status-badge">
+				<span class="status-dot"></span>
+				<span class="status-text">TECHNICAL LEADER • CLOUD & BACKEND ARCHITECT</span>
+			</div>
 
-	<h1>
-		Luis Felipe
-		<br />
-		Herreño
-	</h1>
+			<h1>
+				Luis Felipe
+				<br />
+				<span class="text-accent">Herreño</span>
+			</h1>
 
-	<p>
-		I build software systems, cloud architectures and digital products.
-	</p>
+			<p class="hero-description">
+				Construyo arquitecturas cloud evolutivas, sistemas distribuidos de alto rendimiento y productos digitales de impacto.
+			</p>
 
-	<a href="#projects">Explore my work</a>
+			<!-- Línea de Comando CLI de Tecnologías -->
+			<div class="hero-cli">
+
+				<div class="cli-tags">
+					<span class="tag">Java</span>
+					<span class="tag">Spring Boot</span>
+					<span class="tag">AWS</span>
+					<span class="tag">PostgreSQL</span>
+					<span class="tag">Python</span>
+				</div>
+			</div>
+
+			<!-- Botones de Acción -->
+			<div class="hero-actions">
+				<a href="#experience" class="btn-primary">
+					<span>Experiencia</span>
+					<span class="arrow">↗</span>
+				</a>
+				<a href="#contact" class="btn-secondary">
+					<span>Contacto</span>
+				</a>
+			</div>
+		</div>
+
+		<!-- Columna Derecha: Tarjeta Fotográfica Limpia con Overlay -->
+		<div class="hero-image-container">
+			<div class="hero-card">
+				<!-- Marco de Fotografía de Alta Calidad -->
+				<div class="image-frame">
+					<img
+						src="/images/luis-paramo.jpeg"
+						alt="Luis Felipe Herreño - Software Architect"
+					/>
+				</div>
+
+				<!-- Badge Flotante Glassmorphism -->
+				<div class="card-glass-badge">
+					<div class="badge-icon">☁️</div>
+					<div class="badge-info">
+						<span class="badge-title">Backend & Cloud Lead</span>
+						<span class="badge-sub">Event-Driven & Serverless</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Teaser Horizontal Inferior (Footprint de Arquitectura) -->
+	<div class="hero-footer-teaser">
+		<div class="teaser-item">
+			<span class="teaser-num">01</span>
+			<span class="teaser-text">Monolith to Event-Driven Microservices</span>
+		</div>
+		<div class="teaser-divider"></div>
+		<div class="teaser-item">
+			<span class="teaser-num">02</span>
+			<span class="teaser-text">AWS Data Lake & Analytics Infrastructure</span>
+		</div>
+		<div class="teaser-divider"></div>
+		<div class="teaser-item">
+			<span class="teaser-num">03</span>
+			<span class="teaser-text">Domain-Driven Design & Clean Code</span>
+		</div>
+	</div>
 </section>
 
 <style>
 	#hero {
+		position: relative;
 		min-height: calc(100vh - 80px);
+		width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
-		padding: 120px 48px 80px;
+		justify-content: space-between;
+		align-items: center;
+		padding: 60px 48px 30px;
+		background-color: #090b0e;
+		box-sizing: border-box;
+		overflow: hidden;
 	}
 
+	/* Fondo estilo Blueprint / Cuadrícula de ingeniería */
+	.hero-bg-grid {
+		position: absolute;
+		inset: 0;
+		background-size: 50px 50px;
+		background-image: 
+			linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	/* Glow sutil en el fondo detrás de la tarjeta */
+	.hero-glow {
+		position: absolute;
+		top: 20%;
+		right: 15%;
+		width: 450px;
+		height: 450px;
+		background: radial-gradient(circle, rgba(100, 200, 255, 0.08) 0%, transparent 70%);
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	/* Grid Principal */
+	.hero-container {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1200px;
+		display: grid;
+		grid-template-columns: 1.25fr 0.75fr;
+		align-items: center;
+		gap: 60px;
+		margin: auto 0;
+	}
+
+	/* Status Badge */
+	.status-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 6px 12px;
+		background: rgba(100, 200, 255, 0.06);
+		border: 1px solid rgba(100, 200, 255, 0.15);
+		border-radius: 20px;
+		margin-bottom: 24px;
+	}
+
+	.status-dot {
+		width: 7px;
+		height: 7px;
+		background-color: #64c8ff;
+		border-radius: 50%;
+		box-shadow: 0 0 8px #64c8ff;
+		animation: pulseDot 2s infinite alternate;
+	}
+
+	.status-text {
+		font-family: monospace;
+		font-size: 0.75rem;
+		letter-spacing: 0.1em;
+		color: var(--foreground, #fff);
+		opacity: 0.85;
+	}
+
+	/* Tipografía */
 	#hero h1 {
-		font-size: clamp(4rem, 10vw, 10rem);
-		line-height: 0.9;
-		font-weight: 500;
-		letter-spacing: -0.05em;
-		margin: 24px 0;
+		margin: 0 0 20px 0;
+		font-size: clamp(3.5rem, 6vw, 6.8rem);
+		line-height: 0.92;
+		font-weight: 600;
+		letter-spacing: -0.04em;
+		color: var(--foreground, #fff);
 	}
 
-	#hero p {
-		margin: 0;
+	.text-accent {
+		color: var(--accent, #64c8ff);
 	}
 
-	#hero p:nth-child(1) {
-		font-size: 0.85rem;
-		opacity: 0.5;
-	}
-
-	#hero p:nth-child(2) {
-		font-size: 0.9rem;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-	}
-
-	#hero p:nth-child(4) {
-		max-width: 500px;
+	.hero-description {
+		max-width: 520px;
+		margin: 0 0 32px 0;
 		font-size: 1.1rem;
-		line-height: 1.6;
-		opacity: 0.7;
+		line-height: 1.65;
+		color: var(--muted, #94a3b8);
 	}
 
-	#hero a {
-		margin-top: 32px;
-		width: fit-content;
+	/* CLI Terminal Component */
+	.hero-cli {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+		padding: 12px 18px;
+		background: rgba(15, 20, 28, 0.8);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 8px;
+		max-width: fit-content;
+		margin-bottom: 36px;
+		font-family: monospace;
+		font-size: 0.88rem;
+	}
+
+	.cli-prompt {
+		color: #64c8ff;
+		font-weight: bold;
+	}
+
+	.cli-command {
+		color: #e2e8f0;
+	}
+
+	.cli-equal {
+		color: #64748b;
+	}
+
+	.cli-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.tag {
+		color: #94a3b8;
+		background: rgba(255, 255, 255, 0.04);
+		padding: 2px 8px;
+		border-radius: 4px;
+		transition: all 0.25s ease;
+	}
+
+	.tag:hover {
+		color: #64c8ff;
+		background: rgba(100, 200, 255, 0.1);
+	}
+
+	/* Botones */
+	.hero-actions {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+	}
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 12px 24px;
+		background: #64c8ff;
+		color: #080a0c;
+		font-weight: 600;
+		font-size: 0.95rem;
 		text-decoration: none;
-		color: inherit;
-		border-bottom: 1px solid currentColor;
-		padding-bottom: 6px;
+		border-radius: 6px;
+		box-shadow: 0 4px 20px rgba(100, 200, 255, 0.25);
+		transition: all 0.25s ease;
+	}
+
+	.btn-primary:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 25px rgba(100, 200, 255, 0.4);
+		gap: 14px;
+	}
+
+	.btn-secondary {
+		padding: 12px 20px;
+		color: #94a3b8;
+		font-weight: 500;
+		font-size: 0.95rem;
+		text-decoration: none;
+		border-radius: 6px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		transition: all 0.25s ease;
+	}
+
+	.btn-secondary:hover {
+		color: #fff;
+		border-color: rgba(255, 255, 255, 0.3);
+		background: rgba(255, 255, 255, 0.03);
+	}
+
+	/* Tarjeta de Foto Limpia */
+	.hero-image-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.hero-card {
+		position: relative;
+		width: 100%;
+		max-width: 340px;
+	}
+
+	.image-frame {
+		width: 100%;
+		aspect-ratio: 4 / 5;
+		border-radius: 12px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+		background-color: #12171f;
+	}
+
+	.image-frame img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(0.85) contrast(1.05);
+		transition: transform 0.5s ease, filter 0.5s ease;
+	}
+
+	.hero-card:hover .image-frame img {
+		transform: scale(1.03);
+		filter: saturate(1.05) contrast(1.1);
+	}
+
+	/* Badge Glassmorphism */
+	.card-glass-badge {
+		position: absolute;
+		bottom: -20px;
+		left: -20px;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 12px 18px;
+		background: rgba(15, 20, 28, 0.75);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 10px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	}
+
+	.badge-icon {
+		font-size: 1.2rem;
+	}
+
+	.badge-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.badge-title {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: #fff;
+	}
+
+	.badge-sub {
+		font-size: 0.72rem;
+		color: #64c8ff;
+		font-family: monospace;
+	}
+
+	/* Footer Teaser del Hero */
+	.hero-footer-teaser {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1200px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 24px;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		margin-top: 40px;
+	}
+
+	.teaser-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-size: 0.85rem;
+		color: #64748b;
+	}
+
+	.teaser-num {
+		font-family: monospace;
+		color: #64c8ff;
+		font-weight: bold;
+	}
+
+	.teaser-text {
+		color: #94a3b8;
+		transition: color 0.25s ease;
+	}
+
+	.teaser-item:hover .teaser-text {
+		color: #fff;
+	}
+
+	.teaser-divider {
+		width: 1px;
+		height: 20px;
+		background: rgba(255, 255, 255, 0.08);
+	}
+
+	@keyframes pulseDot {
+		0% { opacity: 0.4; }
+		100% { opacity: 1; }
 	}
 
 	/* Responsive */
-	@media (max-width: 768px) {
+	@media (max-width: 960px) {
 		#hero {
-			min-height: calc(100vh - 70px);
-			padding: 80px 24px 60px;
+			padding: 40px 24px 20px;
 		}
 
-		#hero h1 {
-			font-size: clamp(3.5rem, 17vw, 6rem);
+		.hero-container {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+
+		.hero-image-container {
+			order: -1;
+			justify-content: flex-start;
+		}
+
+		.hero-card {
+			max-width: 280px;
+		}
+
+		.card-glass-badge {
+			left: 10px;
+			bottom: -15px;
+		}
+
+		.hero-footer-teaser {
+			display: none; /* Se oculta en móviles para mantener la pantalla limpia */
 		}
 	}
 </style>

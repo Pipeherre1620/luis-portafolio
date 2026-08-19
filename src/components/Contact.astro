@@ -1,116 +1,207 @@
+---
+---
+
 <section id="contact">
+	<div class="contact-header">
+		<p class="section-label">Contacto</p>
+	</div>
+
 	<div class="contact-content">
-		<p class="contact-label">Contacto</p>
+		<h2>¿Hablamos?</h2>
 
-		<h2>
-			¿Construimos algo
-			<br />
-			juntos?
-		</h2>
-
-		<p class="contact-description">
-			Si tienes un proyecto, una idea o simplemente quieres
-			hablar sobre tecnología, arquitectura o software,
-			hablemos.
+		<p>
+			Si quieres hablar sobre tecnología, arquitectura de software,
+			proyectos o simplemente intercambiar ideas, puedes encontrarme
+			en estos espacios.
 		</p>
 
-		<a class="contact-email" href="mailto:tuemail@ejemplo.com">
-			tuemail@ejemplo.com
-		</a>
-
 		<div class="contact-links">
-			<a href="#" target="_blank" rel="noopener noreferrer">
-				LinkedIn
+			<a
+				href="https://mail.google.com/mail/?view=cm&fs=1&to=luifelipemateus2008@gmail.com"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<span>Email</span>
+				<span>↗</span>
 			</a>
 
-			<a href="#" target="_blank" rel="noopener noreferrer">
-				GitHub
+			<a
+				href="https://www.linkedin.com/in/luis-felipe-herreño-mateus-412562244"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<span>LinkedIn</span>
+				<span>↗</span>
+			</a>
+
+			<a
+				href="https://github.com/Pipeherre1620"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<span>GitHub</span>
+				<span>↗</span>
 			</a>
 		</div>
 	</div>
+
+	<footer>
+		<span>PIPEHERRE</span>
+		<span>© 2026 Luis Felipe Herreño</span>
+	</footer>
 </section>
 
 <style>
 	#contact {
-		min-height: 80vh;
-		display: flex;
-		align-items: center;
-		padding: 160px 48px;
-		border-top: 1px solid rgba(255, 255, 255, 0.15);
+		padding: 160px 48px 60px;
+
+		border-top: 1px solid var(--border);
+	}
+
+	.contact-header {
+		max-width: 1100px;
+
+		margin: 0 auto 120px;
+	}
+
+	.section-label {
+		margin: 0;
+
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+
+		color: var(--accent);
 	}
 
 	.contact-content {
-		width: 100%;
-		max-width: 1200px;
+		max-width: 1100px;
 		margin: 0 auto;
-	}
-
-	.contact-label {
-		margin: 0 0 48px;
-		font-size: 0.85rem;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		opacity: 0.5;
 	}
 
 	.contact-content h2 {
 		margin: 0;
+
 		font-size: clamp(4rem, 10vw, 10rem);
 		line-height: 0.9;
-		font-weight: 400;
+
+		font-weight: var(--weight-medium);
+
 		letter-spacing: -0.06em;
 	}
 
-	.contact-description {
-		max-width: 500px;
-		margin: 48px 0 0;
-		font-size: 1.1rem;
-		line-height: 1.7;
-		opacity: 0.6;
-	}
+	.contact-content > p {
+		max-width: 520px;
 
-	.contact-email {
-		display: inline-block;
-		margin-top: 40px;
-		color: inherit;
-		font-size: 1.2rem;
-		text-decoration: none;
-		border-bottom: 1px solid currentColor;
-		padding-bottom: 6px;
+		margin: 60px 0 100px;
+
+		font-size: var(--text-lg);
+		line-height: 1.7;
+
+		color: var(--muted);
 	}
 
 	.contact-links {
-		display: flex;
-		gap: 32px;
-		margin-top: 64px;
+		max-width: 700px;
 	}
 
 	.contact-links a {
-		color: inherit;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		padding: 24px 0;
+
+		border-top: 1px solid var(--border);
+
+		color: var(--foreground);
 		text-decoration: none;
-		font-size: 0.9rem;
-		opacity: 0.6;
-		transition: opacity 0.3s ease;
+
+		font-size: 1.1rem;
+
+		transition:
+			padding 0.3s ease,
+			color 0.25s ease;
+	}
+
+	.contact-links a:last-child {
+		border-bottom: 1px solid var(--border);
 	}
 
 	.contact-links a:hover {
-		opacity: 1;
+		padding-left: 16px;
+
+		color: var(--accent);
 	}
 
-    @media (max-width: 768px) {
-        #contact {
-            min-height: 70vh;
-            padding: 100px 24px;
-        }
+	.contact-links a span:last-child {
+		color: var(--muted);
 
-        .contact-content h2 {
-            font-size: clamp(3.5rem, 15vw, 6rem);
-        }
+		transition:
+			color 0.25s ease,
+			transform 0.25s ease;
+	}
 
-        .contact-description {
-            font-size: 1rem;
-        }
-    }
+	.contact-links a:hover span:last-child {
+		color: var(--accent);
 
+		transform: translate(4px, -4px);
+	}
+
+	footer {
+		max-width: 1100px;
+
+		margin: 160px auto 0;
+		padding-top: 24px;
+
+		display: flex;
+		justify-content: space-between;
+
+		border-top: 1px solid var(--border);
+
+		font-size: var(--text-xs);
+
+		color: var(--muted);
+	}
+
+	footer span:first-child {
+		color: var(--foreground);
+	}
+
+	@media (max-width: 768px) {
+		#contact {
+			padding: 100px 24px 40px;
+		}
+
+		.contact-header {
+			margin-bottom: 80px;
+		}
+
+		.contact-content h2 {
+			font-size: clamp(3.5rem, 16vw, 6rem);
+		}
+
+		.contact-content > p {
+			margin: 40px 0 70px;
+
+			font-size: 1rem;
+		}
+
+		.contact-links {
+			max-width: none;
+		}
+
+		.contact-links a {
+			padding: 20px 0;
+		}
+
+		footer {
+			flex-direction: column;
+			gap: 12px;
+
+			margin-top: 100px;
+		}
+	}
 </style>
-

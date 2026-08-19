@@ -1,0 +1,99 @@
+<div class="social-rail" aria-label="Redes sociales">
+	<a
+		href="https://www.linkedin.com/in/luis-felipe-herreño-mateus-412562244"
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label="LinkedIn"
+	>
+		<svg viewBox="0 0 24 24" aria-hidden="true">
+			<path
+				d="M6.5 8.5H3.5V20H6.5V8.5ZM5 3C3.9 3 3 3.9 3 5C3 6.1 3.9 7 5 7C6.1 7 7 6.1 7 5C7 3.9 6.1 3 5 3ZM20.5 13.4C20.5 10.1 18.7 8.2 16 8.2C13.8 8.2 12.8 9.4 12.3 10.1V8.5H9.3V20H12.3V14.3C12.3 12.8 12.6 11.3 14.3 11.3C16 11.3 16 12.9 16 14.4V20H19V13.4H20.5Z"
+			/>
+		</svg>
+	</a>
+
+	<a
+		href="https://github.com/Pipeherre1620"
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label="GitHub"
+	>
+		<svg viewBox="0 0 24 24" aria-hidden="true">
+			<path
+				d="M12 2C6.48 2 2 6.48 2 12C2 16.42 4.87 20.17 8.84 21.49C9.34 21.58 9.52 21.27 9.52 21C9.52 20.76 9.51 20.13 9.5 19.3C6.73 19.9 6.14 17.96 6.14 17.96C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.89 5.1 15.89C6.1 15.96 6.63 16.92 6.63 16.92C7.52 18.45 8.97 18 9.54 17.74C9.63 17.1 9.89 16.66 10.18 16.41C7.96 16.16 5.62 15.3 5.62 11.38C5.62 10.26 6.02 9.35 6.65 8.64C6.55 8.39 6.2 7.36 6.74 5.97C6.74 5.97 7.56 5.71 9.48 7.01C10.26 6.79 11.11 6.68 11.96 6.68C12.81 6.68 13.66 6.79 14.44 7.01C16.36 5.71 17.18 5.97 17.18 5.97C17.72 7.36 17.37 8.39 17.27 8.64C17.9 9.35 18.3 10.26 18.3 11.38C18.3 15.31 15.95 16.15 13.73 16.4C14.1 16.72 14.43 17.35 14.43 18.31C14.43 19.69 14.42 20.8 14.42 21C14.42 21.27 14.6 21.59 15.1 21.49C19.13 20.17 22 16.42 22 12C22 6.48 17.52 2 12 2Z"
+			/>
+		</svg>
+	</a>
+
+	
+</div>
+
+<style>
+	.social-rail {
+		position: fixed;
+		left: 0;
+		bottom: 48px;
+
+		z-index: 90;
+
+		display: flex;
+		flex-direction: column;
+
+		padding: 8px;
+
+		background: rgba(10, 10, 10, 0.75);
+		border: 1px solid var(--border);
+		border-left: none;
+
+		border-radius: 0 12px 12px 0;
+
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+
+	.social-rail a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 38px;
+		height: 38px;
+
+		color: var(--muted);
+
+		text-decoration: none;
+
+		transition:
+			color 0.25s ease,
+			transform 0.25s ease;
+	}
+
+	.social-rail svg {
+		width: 20px;
+		height: 20px;
+
+		fill: currentColor;
+	}
+
+	.social-rail a:hover {
+		color: var(--accent);
+		transform: translateX(3px);
+	}
+
+	@media (max-width: 768px) {
+		.social-rail {
+			left: auto;
+			right: 16px;
+			bottom: 20px;
+
+			flex-direction: row;
+
+			border-left: 1px solid var(--border);
+			border-radius: 999px;
+		}
+
+		.social-rail a:hover {
+			transform: translateY(-2px);
+		}
+	}
+</style>

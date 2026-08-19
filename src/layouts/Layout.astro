@@ -17,6 +17,23 @@ const {
 <!doctype html>
 <html lang="es">
 	<head>
+
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+        />
+
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 
@@ -32,3 +49,22 @@ const {
     </body>
 
 </html>
+<script>
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("visible");
+					observer.unobserve(entry.target);
+				}
+			});
+		},
+		{
+			threshold: 0.15,
+		}
+	);
+
+	document
+		.querySelectorAll("section")
+		.forEach((section) => observer.observe(section));
+</script>

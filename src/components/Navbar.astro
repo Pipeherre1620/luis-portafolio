@@ -2,6 +2,8 @@
 	<a class="logo" href="/">PIPEHERRE</a>
 
 	<div class="desktop-menu">
+		<a href="#hero">Home</a>
+		<a href="#posts">Post</a>
 		<a href="#about">About</a>
 		<a href="#experience">Experience</a>
 		<a href="#projects">Projects</a>
@@ -9,12 +11,18 @@
 		<a href="#contact">Contact</a>
 	</div>
 
-	<button class="menu-button" aria-label="Abrir menú" aria-expanded="false">
+	<button
+		class="menu-button"
+		aria-label="Abrir menú"
+		aria-expanded="false"
+	>
 		<span></span>
 		<span></span>
 	</button>
 
 	<div class="mobile-menu">
+		<a href="#hero">Home</a>
+		<a href="#posts">Post</a>
 		<a href="#about">About</a>
 		<a href="#experience">Experience</a>
 		<a href="#projects">Projects</a>
@@ -24,32 +32,37 @@
 </nav>
 
 <style>
+	nav {
+		position: sticky;
+		top: 0;
+		z-index: 100;
 
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+		padding: 24px 48px;
 
-        padding: 24px 48px;
+		background: rgba(10, 10, 10, 0.8);
+		border-bottom: 1px solid var(--border);
 
-        background: rgba(10, 10, 10, 0.75);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
 
 	.logo {
-		color: inherit;
+		color: var(--foreground);
 		text-decoration: none;
+
 		font-size: 1rem;
 		font-weight: 600;
 		letter-spacing: -0.03em;
+
+		transition: color 0.25s ease;
+	}
+
+	.logo:hover {
+		color: var(--accent);
 	}
 
 	.desktop-menu {
@@ -59,34 +72,72 @@
 	}
 
 	.desktop-menu a {
-		color: inherit;
+		position: relative;
+
+		color: var(--foreground);
 		text-decoration: none;
-		font-size: 0.85rem;
-		opacity: 0.6;
-		transition: opacity 0.3s ease;
+
+		font-size: var(--text-sm);
+
+		transition: color 0.25s ease;
 	}
 
 	.desktop-menu a:hover {
-		opacity: 1;
+		color: var(--accent);
+	}
+
+	.desktop-menu a::after {
+		content: "";
+
+		position: absolute;
+		left: 0;
+		bottom: -6px;
+
+		width: 100%;
+		height: 1px;
+
+		background: var(--accent);
+
+		transform: scaleX(0);
+		transform-origin: right;
+
+		transition: transform 0.3s ease;
+	}
+
+	.desktop-menu a:hover::after {
+		transform: scaleX(1);
+		transform-origin: left;
 	}
 
 	.menu-button {
 		display: none;
+
 		width: 40px;
 		height: 40px;
 		padding: 8px;
+
 		border: none;
 		background: transparent;
-		color: inherit;
+		color: var(--foreground);
+
 		cursor: pointer;
 	}
 
 	.menu-button span {
 		display: block;
+
 		width: 24px;
 		height: 1px;
+
 		margin: 6px auto;
+
 		background: currentColor;
+
+		transition: background 0.25s ease;
+	}
+
+	.menu-button:hover {
+		color: var(--accent);
 	}
 
 	.mobile-menu {
@@ -110,12 +161,19 @@
 			position: absolute;
 			top: 100%;
 			left: 0;
+
 			width: 100%;
+
 			padding: 32px 24px;
+
 			flex-direction: column;
-			gap: 24px;
-			background: var(--background);
-			border-top: 1px solid rgba(255, 255, 255, 0.1);
+			gap: 18px;
+
+			background: rgba(10, 10, 10, 0.96);
+			border-top: 1px solid var(--border);
+
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
 		}
 
 		.mobile-menu.open {
@@ -123,9 +181,17 @@
 		}
 
 		.mobile-menu a {
-			color: inherit;
+			color: var(--foreground);
 			text-decoration: none;
-			font-size: 1.5rem;
+
+			font-size: var(--text-lg);
+			font-weight: var(--weight-regular);
+
+			transition: color 0.25s ease;
+		}
+
+		.mobile-menu a:hover {
+			color: var(--accent);
 		}
 	}
 </style>
@@ -154,8 +220,15 @@
 		link.addEventListener("click", () => {
 			menu?.classList.remove("open");
 
-			button?.setAttribute("aria-expanded", "false");
-			button?.setAttribute("aria-label", "Abrir menú");
+			button?.setAttribute(
+				"aria-expanded",
+				"false"
+			);
+
+			button?.setAttribute(
+				"aria-label",
+				"Abrir menú"
+			);
 		});
 	});
 </script>
