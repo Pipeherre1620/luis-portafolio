@@ -1,4 +1,5 @@
 ---
+import LogoCap from "./LogoCap.astro";
 ---
 
 <section id="contact">
@@ -46,8 +47,14 @@
 	</div>
 
 	<footer>
-		<span>PIPEHERRE</span>
-		<span>© 2026 Luis Felipe Herreño</span>
+		<div class="footer-brand">
+			<LogoCap size={28} showText={true} text="PIPEHERRE" subtitle="PORTAFOLIO OFICIAL" idPrefix="footer-logo" />
+		</div>
+		<div class="footer-copy">
+			<span>© 2026 Luis Felipe Herreño</span>
+			<span class="footer-separator">•</span>
+			<span class="footer-tagline">Architecting Evolutive Systems</span>
+		</div>
 	</footer>
 </section>
 
@@ -152,22 +159,37 @@
 
 	footer {
 		max-width: 1100px;
-
 		margin: 160px auto 0;
-		padding-top: 24px;
+		padding-top: 32px;
 
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 
 		border-top: 1px solid var(--border);
-
 		font-size: var(--text-xs);
-
 		color: var(--muted);
 	}
 
-	footer span:first-child {
-		color: var(--foreground);
+	.footer-brand {
+		display: flex;
+		align-items: center;
+	}
+
+	.footer-copy {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		color: var(--muted);
+	}
+
+	.footer-separator {
+		color: var(--border-hover);
+	}
+
+	.footer-tagline {
+		color: var(--accent);
+		font-family: var(--font-mono);
 	}
 
 	@media (max-width: 768px) {
@@ -199,9 +221,13 @@
 
 		footer {
 			flex-direction: column;
-			gap: 12px;
-
+			align-items: flex-start;
+			gap: 16px;
 			margin-top: 100px;
+		}
+
+		.footer-copy {
+			flex-wrap: wrap;
 		}
 	}
 </style>

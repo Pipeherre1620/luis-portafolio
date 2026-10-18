@@ -1,0 +1,179 @@
+---
+interface Props {
+	size?: number;
+	showText?: boolean;
+	text?: string;
+	subtitle?: string;
+	class?: string;
+	idPrefix?: string;
+}
+
+const {
+	size = 38,
+	showText = false,
+	text = "PIPEHERRE",
+	subtitle,
+	class: className = "",
+	idPrefix = "logo-cap",
+} = Astro.props;
+
+const gradientId = `${idPrefix}-gradient`;
+const glowId = `${idPrefix}-glow`;
+---
+
+<div class:list={["logo-cap-wrapper", { "with-text": showText }, className]}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 220 220"
+		width={size}
+		height={size}
+		class="cap-svg"
+		aria-hidden="true"
+	>
+		<defs>
+			<!-- Degradado elegante para la corona de la gorra -->
+			<linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
+				<stop offset="0%" stop-color="#1f2937" />
+				<stop offset="100%" stop-color="#0f172a" />
+			</linearGradient>
+
+			<!-- Resplandor tecnológico Cyan para el glifo {/} -->
+			<filter id={glowId} x="-20%" y="-20%" width="140%" height="140%">
+				<feDropShadow dx="0" dy="1" stdDeviation="3.5" flood-color="#38bdf8" flood-opacity="0.45" />
+			</filter>
+		</defs>
+
+		<!-- Sombra sutil inferior -->
+		<ellipse cx="110" cy="204" rx="92" ry="9" fill="#000000" opacity="0.4" />
+
+		<!-- Visera de la gorra -->
+		<path
+			d="M 12 172 C 35 158, 185 158, 208 172 C 218 178, 195 192, 110 192 C 25 192, 2 178, 12 172 Z"
+			fill="#1e293b"
+			stroke="#334155"
+			stroke-width="2.5"
+			stroke-linejoin="round"
+		/>
+
+		<!-- Corona / Domo de la gorra -->
+		<path
+			d="M 28 165 C 26 80, 70 30, 110 30 C 150 30, 194 80, 192 165 Z"
+			fill={`url(#${gradientId})`}
+			stroke="#334155"
+			stroke-width="2.5"
+			stroke-linejoin="round"
+		/>
+
+		<!-- Botón superior -->
+		<ellipse cx="110" cy="30" rx="11" ry="5.5" fill="#475569" stroke="#334155" stroke-width="1.5" />
+
+		<!-- Ribete de curvatura en la visera -->
+		<path
+			d="M 18 174 C 45 163, 175 163, 202 174"
+			fill="none"
+			stroke="#475569"
+			stroke-width="2"
+			stroke-linecap="round"
+		/>
+
+		<!-- Glifo Central: Marca Matriz {/} -->
+		<g
+			filter={`url(#${glowId})`}
+			transform="translate(110, 114)"
+			text-anchor="middle"
+			dominant-baseline="central"
+		>
+			<!-- Llave izquierda -->
+			<text
+				x="-32"
+				y="-1"
+				fill="#f0f6fc"
+				font-family="monospace, 'Fira Code', 'JetBrains Mono', Courier"
+				font-size="44"
+				font-weight="700"
+			>
+				{"{"}
+			</text>
+
+			<!-- Símbolo / de desarrollador en Cyan Arquitecto -->
+			<text
+				x="0"
+				y="-2"
+				fill="#38bdf8"
+				font-family="monospace, 'Fira Code', 'JetBrains Mono', -apple-system, sans-serif"
+				font-size="42"
+				font-weight="900"
+			>
+				/
+			</text>
+
+			<!-- Llave derecha -->
+			<text
+				x="32"
+				y="-1"
+				fill="#f0f6fc"
+				font-family="monospace, 'Fira Code', 'JetBrains Mono', Courier"
+				font-size="44"
+				font-weight="700"
+			>
+				{"}"}
+			</text>
+		</g>
+	</svg>
+
+	{showText && (
+		<div class="logo-text-block">
+			<span class="logo-title">{text}</span>
+			{subtitle && <span class="logo-subtitle">{subtitle}</span>}
+		</div>
+	)}
+</div>
+
+<style>
+	.logo-cap-wrapper {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		vertical-align: middle;
+	}
+
+	.cap-svg {
+		display: block;
+		flex-shrink: 0;
+		filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+		transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+	}
+
+	.logo-cap-wrapper:hover .cap-svg {
+		transform: translateY(-1px) scale(1.03);
+		filter: drop-shadow(0 6px 16px rgba(56, 189, 248, 0.2));
+	}
+
+	.logo-text-block {
+		display: flex;
+		flex-direction: column;
+		line-height: 1.15;
+	}
+
+	.logo-title {
+		font-family: var(--font-body);
+		font-weight: var(--weight-bold);
+		font-size: 1rem;
+		letter-spacing: -0.02em;
+		color: var(--foreground);
+		transition: color 0.25s ease;
+	}
+
+	.logo-cap-wrapper:hover .logo-title {
+		color: var(--accent);
+	}
+
+	.logo-subtitle {
+		font-family: var(--font-body);
+		font-size: 0.65rem;
+		font-weight: var(--weight-medium);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+</style>

@@ -1,5 +1,11 @@
+---
+import LogoCap from "./LogoCap.astro";
+---
+
 <nav>
-	<a class="logo" href="/">PIPEHERRE</a>
+	<a class="logo-link" href="#hero" aria-label="Ir al inicio - PIPEHERRE">
+		<LogoCap size={36} showText={true} text="PIPEHERRE" subtitle="SOFTWARE ARCHITECT" idPrefix="nav-logo" />
+	</a>
 
 	<div class="desktop-menu">
 		<a href="#hero">Home</a>
@@ -41,28 +47,24 @@
 		align-items: center;
 		justify-content: space-between;
 
-		padding: 24px 48px;
+		padding: 16px 48px;
 
-		background: rgba(10, 10, 10, 0.8);
+		background: rgba(13, 17, 23, 0.85);
 		border-bottom: 1px solid var(--border);
 
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
+		backdrop-filter: blur(14px);
+		-webkit-backdrop-filter: blur(14px);
 	}
 
-	.logo {
-		color: var(--foreground);
+	.logo-link {
+		display: inline-flex;
+		align-items: center;
 		text-decoration: none;
-
-		font-size: 1rem;
-		font-weight: 600;
-		letter-spacing: -0.03em;
-
-		transition: color 0.25s ease;
+		transition: transform 0.2s ease;
 	}
 
-	.logo:hover {
-		color: var(--accent);
+	.logo-link:hover {
+		transform: translateY(-1px);
 	}
 
 	.desktop-menu {
@@ -169,7 +171,7 @@
 			flex-direction: column;
 			gap: 18px;
 
-			background: rgba(10, 10, 10, 0.96);
+			background: rgba(13, 17, 23, 0.98);
 			border-top: 1px solid var(--border);
 
 			backdrop-filter: blur(12px);
